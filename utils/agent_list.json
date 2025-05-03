@@ -1,0 +1,26 @@
+{
+        "mistral":  { 
+                "name": "Misrtal",
+                "id": 1,
+                "desc": "",
+                "model": "mistral-large-latest",
+                "env_api_path": "MISTRAL_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_MISTRAL"
+        },
+        "deepseek":  { 
+                "name": "DeepSeek",
+                "id": 2,
+                "desc": "",
+                "model": "deepseek-chat",
+                "env_api_path": "DEEPSEEK_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_MISTRAL"
+        },
+        "chatgpt":  { 
+                "name": "GPT-4.5",
+                "id": 3,
+                "desc": "",
+                "model": "gpt-4.1-mini",
+                "env_api_path": "OPENAI_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_OPENAI"
+        }     
+}
