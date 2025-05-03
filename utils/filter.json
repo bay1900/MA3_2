@@ -1,0 +1,7 @@
+{
+    "$or": [
+        {"gene": "GENE_FAULT"},
+        {"min_age": {"$lte": "USER_AGE"}},
+        {"max_age": {"$gte": "USER_AGE"}}
+    ]
+}

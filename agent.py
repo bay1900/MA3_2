@@ -91,14 +91,11 @@ def agent_executor( payload ):
                                       search_kwargs={"k": 5})
     
     
-    # retriever.search_kwargs["filter"] = {
-    #     "$or": [
-    #         {"Gene": gene_fault},
-    #         # {"Min Age": {"$lte": user_age}},
-    #         # {"Max Age": {"$gte": user_age}}
-    #     ]
-    # }       
-    
+    # FILTER METADATA
+    filter = file_helper.read_json( "./utils/filter.json" ) 
+    filter = filter.replace("GENE_FAULT", gene_fault)
+    filter = filter.replace("USER_AGE", str(age))
+        
     vector_chain = (
             {"context": retriever, "question":  RunnablePassthrough() }
             | prompt_template
