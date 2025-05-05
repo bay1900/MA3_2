@@ -21,9 +21,7 @@ def get_chat_model(model: str):
     
     agent_model   = agent_property.get("model")
     agent_api_key = get_env.retreive_value( agent_property.get("env_api_path") ) 
-    
-    
-    print ( "agent_api_key !!!!!!!!!!!!!!!!!!!  : ", agent_api_key )
+
     
     chat_model = selected_chat_model(
                 model=agent_model,
@@ -35,6 +33,5 @@ def get_chat_model(model: str):
     if not selected_chat_model:
         raise ValueError(f"Unsupported model: {model}. Available models: {list(MODEL_MAPPING.keys())}")
     
-    print ( "chat_model : ", chat_model )
 
     return chat_model  

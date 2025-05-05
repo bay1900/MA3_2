@@ -14,7 +14,7 @@ from langchain.agents import Tool
 from langchain.agents import create_react_agent
 from langchain.memory import ConversationBufferMemory
 
-from helper import get_env, file_helper, api_helper,embedding_helper
+from helper import get_env, file_helper,embedding_helper, filter_helper
 
 from langchain.prompts import (
     PromptTemplate,
@@ -92,9 +92,8 @@ def agent_executor( payload ):
     
     
     # FILTER METADATA
-    filter = file_helper.read_json( "./utils/filter.json" ) 
-    filter = filter.replace("GENE_FAULT", gene_fault)
-    filter = filter.replace("USER_AGE", str(age))
+    filter = filter_helper.create_filter_from_json( gene_fault, age )
+    print ( filter)
         
     vector_chain = (
             {"context": retriever, "question":  RunnablePassthrough() }
