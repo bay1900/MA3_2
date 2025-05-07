@@ -138,7 +138,7 @@ async def get_chat(
                     payload: param.ChatInput,
                     # api_key: str = Depends(get_api_key)
                   ):
-    
+    # print( "got request")
     result = agent_executor(payload) ## Required to implement retry 
     return result
 
@@ -155,7 +155,7 @@ async def rag( ):
     deepseek = await create_vector_deepseek()
     rs.append( deepseek) 
     
-    return  rs
+    return  rs 
  
  
- 
+  
