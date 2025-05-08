@@ -22,5 +22,13 @@
                 "model": "gpt-4.1-mini",
                 "env_api_path": "OPENAI_API_KEY",
                 "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_OPENAI"
-        }     
+        },
+        "gemini":  { 
+                "name": "gemini",
+                "id": 3,
+                "desc": "",
+                "model": "gemini-2.0-flash",
+                "env_api_path": "GEMINI_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_GEMINI"
+        }         
 }

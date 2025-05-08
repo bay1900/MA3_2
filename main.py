@@ -8,7 +8,7 @@ from typing import Optional
 from pathlib import Path
 from helper import api_helper, file_helper, actionplan_to_json
 from model import param
-from retriever import create_vector_mistral, create_vector_openai, create_vector_deepseek
+from retriever import create_vector_mistral, create_vector_openai, create_vector_deepseek, create_vector_gemini
 from agent import agent_executor  
 
 # from chat import chat_hist
@@ -154,6 +154,9 @@ async def rag( ):
     
     deepseek = await create_vector_deepseek()
     rs.append( deepseek) 
+    
+    gemini = await create_vector_gemini()
+    rs.append( gemini) 
     
     return  rs 
  

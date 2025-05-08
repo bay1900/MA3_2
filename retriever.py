@@ -147,7 +147,42 @@ async def create_vector_mistral():
             "vector_store": agent_property.get("vector_store", "unknown"),
             "error": str(e)
         }
-        
+
+async def create_vector_gemini():
+    try:
+        # Load documents
+        document = load_document()
+
+        # Load agent configuration
+        agent_list = file_helper.read_json("./utils/agent_list.json")
+        agent_property = agent_list.get("gemini")
+
+        # Retrieve credentials and config
+        api_key = get_env.retreive_value(agent_property.get("env_api_path"))
+        vector_store_path = get_env.retreive_value(agent_property.get("vector_store"))
+
+        # Initialize embeddings and vector store
+        embedding = MistralAIEmbeddings(mistral_api_key=api_key)
+
+        vectordb = Chroma.from_documents(
+            documents=document,
+            embedding=embedding,
+            persist_directory=vector_store_path
+        )
+
+        return {
+            "status": "success",
+            "model": "mistral",
+            "vector_store": vector_store_path
+        }
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "model": "mistral",
+            "vector_store": agent_property.get("vector_store", "unknown"),
+            "error": str(e)
+        }
 async def create_vector_openai():
     try:
         # Load documents
