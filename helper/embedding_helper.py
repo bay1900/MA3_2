@@ -20,6 +20,9 @@ def embedding_selector(provider: str = "mistral") :
     elif provider == "llama":
         mistral_api_key = os.getenv("MISTRAL_API_KEY")
         embedding_function = MistralAIEmbeddings(mistral_api_key=mistral_api_key)
+    elif provider == "claude":
+        mistral_api_key = os.getenv("MISTRAL_API_KEY")
+        embedding_function = MistralAIEmbeddings(mistral_api_key=mistral_api_key)
     else:
         raise ValueError(f"Unsupported embedding provider: {provider}")
 

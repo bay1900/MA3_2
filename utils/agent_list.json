@@ -38,5 +38,13 @@
                 "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
                 "env_api_path": "TOGETHER_API_KEY",
                 "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_GEMINI"
-        }              
+        },
+        "claude":  { 
+                "name": "Claude",
+                "id": 3,
+                "desc": "",
+                "model": "claude-3-5-sonnet-20240620",
+                "env_api_path": "ANTHROPIC_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_GEMINI"
+        }
 }
