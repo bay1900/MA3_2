@@ -30,5 +30,13 @@
                 "model": "gemini-2.0-flash",
                 "env_api_path": "GEMINI_API_KEY",
                 "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_GEMINI"
-        }         
+        },
+        "llama":  { 
+                "name": "llama",
+                "id": 3,
+                "desc": "",
+                "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+                "env_api_path": "TOGETHER_API_KEY",
+                "vector_store": "KNOWLEDGE_BASE_VECTOR_PATH_GEMINI"
+        }              
 }

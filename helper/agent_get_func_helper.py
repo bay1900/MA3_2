@@ -2,6 +2,7 @@ from langchain_mistralai.chat_models import ChatMistralAI
 from langchain_deepseek import ChatDeepSeek
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_together import ChatTogether
 
 
 from helper import get_env, file_helper, api_helper
@@ -11,7 +12,8 @@ MODEL_MAPPING = {
     "mistral" : ChatMistralAI,
     "deepseek": ChatDeepSeek,
     "chatgpt" : ChatOpenAI, 
-    "gemini" : ChatGoogleGenerativeAI
+    "gemini"  : ChatGoogleGenerativeAI,
+    "llama"   : ChatTogether
 }
 
 def get_chat_model(model: str):

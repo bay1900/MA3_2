@@ -134,6 +134,8 @@ def agent_executor( payload ):
     elapsed_time = end_time - start_time
     
     result = { 
+               "llm"    : llm,
+               "model"  : agent_property.get("model"),
                "output": response.get("output", "No answer found"),
                "explanation": response.get("explanation", "No explanation found"),
                "intermediate_steps" : response.get("intermediate_steps", "No intermediate steps found"),
